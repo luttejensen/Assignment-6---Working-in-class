@@ -18,17 +18,6 @@ public class Test
     {
         PersonManager personManager = new PersonManager();
         
-        Person daniel = new Person(0, "Daniel");
-        daniel.setEmail("daniel666@hotmail.com");
-        Person jeppe = new Person(1337, "Jeppe");
-        jeppe.setEmail("jle@easv.dk");
-        Person peter = new Person(666, "Peter");
-        peter.setEmail("pgn@easv.dk");
-        
-        personManager.addPerson(daniel);
-        personManager.addPerson(jeppe);
-        personManager.addPerson(peter);
-        
         Teacher bent = new Teacher(1, "Bent", "bht");
         bent.setSalary(34543);
         bent.addSubject("Programming");
@@ -55,10 +44,18 @@ public class Test
         personManager.addPerson(mads);
         personManager.removePerson(35234);
         
-        List<Person> persons = personManager.getAllPersons();
+        List<Teacher> teachers = personManager.getAllTeachers();
         
         System.out.println("ID\tNAME\tEMAIL\t\tINITIALS\tSALARY\tMAIN");
-        for (Person person : persons)
+        for (Person person : teachers)
+        {
+            System.out.println(person.toString());
+        }
+        
+        List<Student> students = personManager.getAllStudents();
+        System.out.println("");
+        System.out.println("ID\tNAME\tEMAIL\tEDUCATION\tAVG GRADE");
+        for (Person person : students)
         {
             System.out.println(person.toString());
         }
