@@ -59,5 +59,8 @@ public class Test
         {
             System.out.println(person.toString());
         }
+        
+        MainMenu menu = new MainMenu();
+        menu.run();
     }
 }
