@@ -43,6 +43,18 @@ public class Test
         persons.add(bent);
         persons.add(stig);
         
+        Student mads = new Student(10, "Mads", "CS");
+        GradeInfo gi1 = new GradeInfo("SCO", 7);
+        GradeInfo gi2 = new GradeInfo("SDE", 2);
+        GradeInfo gi3 = new GradeInfo("ITO", 10);
+        GradeInfo gi4 = new GradeInfo("Unity", 10);
+        mads.addGrade(gi1);
+        mads.addGrade(gi2);
+        mads.addGrade(gi3);
+        mads.addGrade(gi4);
+        
+        persons.add(mads);
+        
         System.out.println("ID\tNAME\tEMAIL\t\tINITIALS\tSALARY\tMAIN");
         for (Person person : persons)
         {
