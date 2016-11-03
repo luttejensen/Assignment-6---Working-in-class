@@ -3,7 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package assignment6inclas;
+package Assignment6SchoolSystem;
+
+import Assignment6SchoolSystem.BE.Teacher;
+import Assignment6SchoolSystem.BLL.PersonManager;
+import Assignment6SchoolSystem.BE.Student;
+import Assignment6SchoolSystem.GUI.MainMenu;
+import Assignment6SchoolSystem.BE.GradeInfo;
 
 /**
  *

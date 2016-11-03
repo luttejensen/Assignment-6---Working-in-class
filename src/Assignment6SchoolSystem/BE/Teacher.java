@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package assignment6inclas;
+package Assignment6SchoolSystem.BE;
 
+import Assignment6SchoolSystem.BE.Person;
 import java.util.ArrayList;
 import java.util.List;
 
