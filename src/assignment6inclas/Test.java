@@ -5,9 +5,6 @@
  */
 package assignment6inclas;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  *
  * @author jeppjleemoritzled
@@ -42,7 +39,7 @@ public class Test
         mads.addGrade(gi4);
         
         personManager.addPerson(mads);
-        personManager.removePerson(35234);
+        personManager.removePerson(35234); // doesn't exist
         
         MainMenu menu = new MainMenu();
         menu.run();
