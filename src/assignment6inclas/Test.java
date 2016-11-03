@@ -16,14 +16,14 @@ public class Test
 {
     public void startTest()
     {
-        PersonManager personManager = new PersonManager();
+        PersonManager personManager = PersonManager.getInstance();
         
-        Teacher bent = new Teacher(1, "Bent", "bht");
+        Teacher bent = new Teacher("Bent", "bht");
         bent.setSalary(34543);
         bent.addSubject("Programming");
         bent.addSubject("Databases");
         
-        Teacher stig = new Teacher(2, "Stig", "ssi");
+        Teacher stig = new Teacher("Stig", "ssi");
         stig.setSalary(32434);
         stig.addSubject("ITO");
         stig.addSubject("Unity game programming");
@@ -31,7 +31,7 @@ public class Test
         personManager.addPerson(bent);
         personManager.addPerson(stig);
         
-        Student mads = new Student(10, "Mads", "CS");
+        Student mads = new Student("Mads", "CS");
         GradeInfo gi1 = new GradeInfo("SCO", 7);
         GradeInfo gi2 = new GradeInfo("SDE", 2);
         GradeInfo gi3 = new GradeInfo("ITO", 10);
@@ -43,22 +43,6 @@ public class Test
         
         personManager.addPerson(mads);
         personManager.removePerson(35234);
-        
-        List<Teacher> teachers = personManager.getAllTeachers();
-        
-        System.out.println("ID\tNAME\tEMAIL\t\tINITIALS\tSALARY\tMAIN");
-        for (Person person : teachers)
-        {
-            System.out.println(person.toString());
-        }
-        
-        List<Student> students = personManager.getAllStudents();
-        System.out.println("");
-        System.out.println("ID\tNAME\tEMAIL\tEDUCATION\tAVG GRADE");
-        for (Person person : students)
-        {
-            System.out.println(person.toString());
-        }
         
         MainMenu menu = new MainMenu();
         menu.run();

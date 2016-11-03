@@ -11,21 +11,26 @@ package assignment6inclas;
  */
 public abstract class Person
 {
-    
+    private static int idGenerator = 0;
     private String name;
     private String email;
     private int id;
 
-    public Person(int id, String name)
+    public Person(String name)
     {
         this.name = name;
-        this.id = id;
+        this.id = idGenerator++;
     }
-
+    
+   public static String getHeaderAsString()
+    {
+        return "ID\tNAME\tEMAIL";
+    }
+    
     @Override
     public String toString()
     {
-        return id + "\t" + name + "\t" + email; //To change body of generated methods, choose Tools | Templates.
+        return getId() + "\t" + getName() + "\t" + getEmail(); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
@@ -46,7 +51,10 @@ public abstract class Person
      */
     public String getEmail()
     {
-        return email;
+        String em = "";
+        if(email!=null)
+            em=email;
+        return em;
     }
 
     /**
@@ -67,7 +75,12 @@ public abstract class Person
      */
     public String getName()
     {
-        return name;
+        String nam = "";
+        
+        if(name!=null)
+            nam=name;
+        
+        return nam;
     }
 
     /**

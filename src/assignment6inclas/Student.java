@@ -18,9 +18,9 @@ public class Student extends Person
     private List<GradeInfo> gradeReport = new ArrayList<>();
     private String education;
 
-    public Student(int id, String name, String education)
+    public Student(String name, String education)
     {
-        super(id, name);
+        super(name);
         this.education = education;
     }
     
@@ -46,6 +46,11 @@ public class Student extends Person
     public void addGrade(GradeInfo gi)
     {
         gradeReport.add(gi);
+    }
+    
+    public static String getHeaderAsString()
+    {
+        return Person.getHeaderAsString()+"\tEDUCATION\tAVG GRADE";
     }
     
     /**
@@ -77,6 +82,9 @@ public class Student extends Person
      */
     public String getEducation()
     {
+        String edu = "";
+        if (education!=null)
+            edu=education;
         return education;
     }
     
@@ -93,8 +101,13 @@ public class Student extends Person
     @Override
     public String toString()
     {
+        double avgGrade = getAverageGrade();
+        String grade = "";
+        if(avgGrade>=0)
+            grade = avgGrade+"";
+        
         return super.toString() + 
-                "\t" + education + "\t\t" + getAverageGrade(); //To change body of generated methods, choose Tools | Templates.
+                "\t" + getEducation() + "\t\t" + grade; //To change body of generated methods, choose Tools | Templates.
     }
     
     

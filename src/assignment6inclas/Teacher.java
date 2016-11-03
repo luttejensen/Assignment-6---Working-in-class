@@ -19,12 +19,17 @@ public class Teacher extends Person
     private double salary;
     private List<String> subjects = new ArrayList<>();
 
-    public Teacher(int id, String name, String initials)
+    public Teacher(String name, String initials)
     {
-        super(id, name);
+        super(name);
         this.initials = initials;
     }
-
+ 
+    public static String getHeaderAsString()
+    {
+        return Person.getHeaderAsString()+"\t\tINITIALS\tSALARY\tMAIN";
+    }
+    
     @Override
     public String toString()
     {

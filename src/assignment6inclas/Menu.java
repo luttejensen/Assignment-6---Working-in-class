@@ -5,6 +5,7 @@
  */
 package assignment6inclas;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -33,7 +34,7 @@ public abstract class Menu
     private String header;
 
     // The list of menu options texts.
-    protected String[] menuItems;
+    private String[] menuItems;
     
     private Scanner reader;
 
@@ -107,7 +108,7 @@ public abstract class Menu
         System.out.println(" ---### " + header + " ###--- ");
         for (int i = 0; i < menuItems.length; i++)
         {
-            System.out.println(menuItems[i]);
+            System.out.println((i+1)+") " + menuItems[i]);
         }
         System.out.println("------------------------------");
         
@@ -119,7 +120,11 @@ public abstract class Menu
     protected void pause()
     {
         System.out.println("Press ENTER to continue");
-        reader.nextLine();
+            try {
+        System.in.read();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /**

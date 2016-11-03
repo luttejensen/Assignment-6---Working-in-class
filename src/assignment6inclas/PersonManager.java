@@ -15,8 +15,16 @@ import java.util.List;
 public class PersonManager
 {
     private List<Person> persons = new ArrayList<>();
-
-    public PersonManager()
+    private static PersonManager instance;
+    
+    public static PersonManager getInstance()
+    {
+        if(instance==null)
+            instance = new PersonManager();
+        return instance;
+    }
+    
+    private PersonManager() // Singleton pattern
     {
     }
     
@@ -33,6 +41,7 @@ public class PersonManager
         
         return listOfTeachers;
     }
+    
     
     public List<Student> getAllStudents()
     {
